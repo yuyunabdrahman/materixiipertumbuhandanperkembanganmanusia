@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #172033;
+  background: #f7f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  font-smooth: always;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+::selection { background: #e5e2ff; color: #4038a8; }
+
+.app-shell { min-height: 100vh; }
+.sidebar { width: 252px; }
+.main-area { margin-left: 252px; }
+.page-wrap { width: min(1200px, 100%); margin: 0 auto; }
+.nav-item { transition: .2s ease; }
+.nav-item:hover { background: #f2f1ff; color: #6258e8; }
+.nav-item.active { background: #eeecff; color: #5147d3; font-weight: 700; }
+.soft-card { border: 1px solid #eef0f5; background: #fff; box-shadow: 0 14px 40px rgba(34, 42, 74, .045); }
+.btn-primary { background: #6258e8; color: white; transition: .2s ease; }
+.btn-primary:hover { background: #5147d3; transform: translateY(-1px); }
+.btn-primary:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.topic-card { transition: .2s ease; }
+.topic-card:hover { transform: translateY(-3px); box-shadow: 0 18px 36px rgba(34,42,74,.08); }
+.progress-track { height: 8px; overflow: hidden; border-radius: 999px; background: #efeff5; }
+.progress-value { height: 100%; border-radius: inherit; background: #6258e8; transition: width .35s ease; }
+.board-card { touch-action: manipulation; transition: transform .16s ease, box-shadow .16s ease; }
+.board-card:hover { transform: translateY(-2px); }
+.answer-input { outline: none; transition: border-color .2s, box-shadow .2s; }
+.answer-input:focus { border-color: #8178ef; box-shadow: 0 0 0 4px rgba(98,88,232,.1); }
+.pop-in { animation: pop-in .28s ease both; }
+@keyframes pop-in { from { opacity: 0; transform: translateY(8px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+@media (max-width: 900px) {
+  .sidebar { display: none; }
+  .main-area { margin-left: 0; padding-bottom: 92px; }
+  .mobile-nav { display: flex !important; }
+}
+@media (max-width: 560px) {
+  .page-wrap { padding-left: 18px !important; padding-right: 18px !important; }
+}
